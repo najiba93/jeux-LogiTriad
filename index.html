@@ -10,16 +10,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎮 Jeux de Logique Classiques</h1>
+        <h1>LogiTriad</h1>
         
         <div class="game-selector">
-            <button class="game-btn active" onclick="showGame('morpion')">Morpion</button>
-            <button class="game-btn" onclick="showGame('puissance4')">Puissance 4</button>
-            <button class="game-btn" onclick="showGame('pendu')">Pendu</button>
+            <button class="game-btn active" onclick="showGame('morpion')">jeux Morpion</button>
+            <button class="game-btn" onclick="showGame('puissance4')">jeux Puissance 4</button>
+            <button class="game-btn" onclick="showGame('pendu')">jeux Pendu</button>
         </div>
 
         <!-- Mode de jeu -->
         <div class="game-mode-selector" style="text-align: center; margin-bottom: 20px;">
+
+          
             <div style="margin-bottom: 10px;">
                 <label style="margin-right: 15px;">
                     <input type="radio" name="gameMode" value="2players" checked onchange="changeGameMode()"> 2 Joueurs
@@ -40,6 +42,10 @@
 
         <!-- MORPION -->
         <div id="morpion" class="game-area active">
+
+<div><p>Le but est d'aligner 3 symboles identiques horizontalement, verticalement ou en diagonale avant l'adversaire. Cliquez sur une case vide d'une grille 3x3 pour placer votre symbole : le Joueur 1 utilise X (en bleu), le Joueur 2 ou l'IA utilise O (en rouge). Les tours alternent automatiquement. Vous gagnez si vous alignez 3 symboles ; sinon, c'est un match nul si la grille est pleine. Astuce : priorisez le centre pour une meilleure stratégie. L'IA en mode Difficile bloque et anticipe vos coups efficacement.</p></div>
+
+            <pLe but est d'aligner 3 symboles identiques horizontalement, verticalement ou en diagonale avant l'adversaire. Cliquez sur une case vide d'une grille 3x3 pour placer votre symbole : le Joueur 1 utilise X (en bleu), le Joueur 2 ou l'IA utilise O (en rouge). Les tours alternent automatiquement. Vous gagnez si vous alignez 3 symboles ; sinon, c'est un match nul si la grille est pleine. Astuce : priorisez le centre pour une meilleure stratégie. L'IA en mode Difficile bloque et anticipe vos coups efficacement.</p>
             <div class="game-info">
                 <div class="score">Joueur actuel: <span id="current-player">X</span></div>
                 <div id="tic-status"></div>
@@ -52,6 +58,7 @@
 
         <!-- PUISSANCE 4 -->
         <div id="puissance4" class="game-area">
+            <p>Le but est d'aligner 4 pièces de votre couleur horizontalement, verticalement ou en diagonale avant l'adversaire. Cliquez sur les flèches ↓ au-dessus des colonnes pour faire tomber une pièce (elle descend par gravité jusqu'au bas disponible) : le Joueur 1 utilise des pièces rouges (🔴), le Joueur 2 ou l'IA utilise des jaunes (🟡). Les colonnes pleines sont injouables, et les tours alternent. Vous gagnez avec 4 pièces alignées ; la partie est nulle si la grille 6x7 est pleine sans vainqueur. Astuce : concentrez-vous sur les colonnes centrales et bloquez l'adversaire. L'IA en mode Difficile priorise les victoires potentielles et bloque les vôtres.</p>
             <div class="game-info">
                 <div class="score">Joueur actuel: <span id="current-connect4-player">🔴</span></div>
                 <div id="connect4-status"></div>
@@ -69,6 +76,7 @@
 
         <!-- PENDU -->
         <div id="pendu" class="game-area">
+            <div><p><p>Le but est de deviner un mot secret (thème informatique, comme "JAVASCRIPT") avant d'atteindre 6 erreurs, qui complèt</p></div>
             <div class="game-info">
                 <div class="score">Erreurs: <span id="wrong-guesses">0</span>/6</div>
                 <div id="hangman-status"></div>
