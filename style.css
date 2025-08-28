@@ -1,0 +1,262 @@
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            max-width: 800px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .game-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .game-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .game-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .game-btn.active {
+            background: linear-gradient(45deg, #2196F3, #1976D2);
+        }
+
+        .game-area {
+            display: none;
+        }
+
+        .game-area.active {
+            display: block;
+        }
+
+        .game-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .score {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .restart-btn {
+            background: linear-gradient(45deg, #FF6B6B, #ee5a5a);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .restart-btn:hover {
+            background: linear-gradient(45deg, #ee5a5a, #d64545);
+        }
+
+        /* Morpion Styles */
+        .tic-tac-toe-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            max-width: 300px;
+            margin: 0 auto;
+            background: #333;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .tic-cell {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: none;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+
+        .tic-cell:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        /* Puissance 4 Styles */
+        .connect4-board {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            max-width: 420px;
+            margin: 0 auto;
+            background: #1565C0;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .connect4-cell {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #0D47A1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .connect4-cell.empty {
+            background: white;
+        }
+
+        .connect4-cell.red {
+            background: #f44336;
+        }
+
+        .connect4-cell.yellow {
+            background: #ffeb3b;
+        }
+
+        .connect4-cell:hover {
+            transform: scale(1.1);
+        }
+
+        .column-btn {
+            background: rgba(255,255,255,0.8);
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Pendu Styles */
+        .hangman-area {
+            text-align: center;
+        }
+
+        .word-display {
+            font-size: 2em;
+            font-weight: bold;
+            letter-spacing: 10px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .alphabet {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        .letter-btn {
+            padding: 10px;
+            border: 2px solid #4CAF50;
+            background: white;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .letter-btn:hover {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .letter-btn.used {
+            background: #ccc;
+            border-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .letter-btn.wrong {
+            background: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+
+        .hangman-drawing {
+            font-family: monospace;
+            font-size: 1.2em;
+            line-height: 1.2;
+            margin: 20px 0;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            white-space: pre;
+        }
+
+        .game-mode-selector {
+            background: rgba(255,255,255,0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .game-mode-selector input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .game-mode-selector select {
+            padding: 5px 10px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .ai-thinking {
+            color: #FF6B6B;
+            font-style: italic;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }

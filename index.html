@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeux de Logique Classiques</title>
+    <link rel="stylesheet" href="style.css">
+    
+ 
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Jeux de Logique Classiques</h1>
+        
+        <div class="game-selector">
+            <button class="game-btn active" onclick="showGame('morpion')">Morpion</button>
+            <button class="game-btn" onclick="showGame('puissance4')">Puissance 4</button>
+            <button class="game-btn" onclick="showGame('pendu')">Pendu</button>
+        </div>
+
+        <!-- Mode de jeu -->
+        <div class="game-mode-selector" style="text-align: center; margin-bottom: 20px;">
+            <div style="margin-bottom: 10px;">
+                <label style="margin-right: 15px;">
+                    <input type="radio" name="gameMode" value="2players" checked onchange="changeGameMode()"> 2 Joueurs
+                </label>
+                <label>
+                    <input type="radio" name="gameMode" value="ai" onchange="changeGameMode()"> Vs IA
+                </label>
+            </div>
+            <div id="ai-difficulty" style="display: none;">
+                <label style="margin-right: 10px;">Difficulté IA:</label>
+                <select id="difficulty-select" onchange="changeDifficulty()">
+                    <option value="easy">Facile</option>
+                    <option value="medium">Moyen</option>
+                    <option value="hard">Difficile</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- MORPION -->
+        <div id="morpion" class="game-area active">
+            <div class="game-info">
+                <div class="score">Joueur actuel: <span id="current-player">X</span></div>
+                <div id="tic-status"></div>
+                <button class="restart-btn" onclick="restartTicTacToe()">Nouvelle partie</button>
+            </div>
+            <div class="tic-tac-toe-board" id="tic-board">
+                <!-- Généré par JavaScript -->
+            </div>
+        </div>
+
+        <!-- PUISSANCE 4 -->
+        <div id="puissance4" class="game-area">
+            <div class="game-info">
+                <div class="score">Joueur actuel: <span id="current-connect4-player">🔴</span></div>
+                <div id="connect4-status"></div>
+                <button class="restart-btn" onclick="restartConnect4()">Nouvelle partie</button>
+            </div>
+            <div style="text-align: center; margin-bottom: 10px;">
+                <div id="column-buttons">
+                    <!-- Généré par JavaScript -->
+                </div>
+            </div>
+            <div class="connect4-board" id="connect4-board">
+                <!-- Généré par JavaScript -->
+            </div>
+        </div>
+
+        <!-- PENDU -->
+        <div id="pendu" class="game-area">
+            <div class="game-info">
+                <div class="score">Erreurs: <span id="wrong-guesses">0</span>/6</div>
+                <div id="hangman-status"></div>
+                <button class="restart-btn" onclick="restartHangman()">Nouveau mot</button>
+            </div>
+            <div class="hangman-area">
+                <div class="hangman-drawing" id="hangman-drawing"></div>
+                <div class="word-display" id="word-display"></div>
+                <div class="alphabet" id="alphabet">
+                    <!-- Généré par JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="script.js" ></script>
+   
+</body>
+</html>
